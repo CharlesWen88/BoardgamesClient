@@ -18,7 +18,7 @@ export interface BoardgameName {
 }
 
 export interface BoardgameList {
-  boardgames: string[];
+  boardgames: BoardgameName[];
 }
 
 export interface Comment {

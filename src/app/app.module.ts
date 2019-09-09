@@ -11,6 +11,7 @@ import { BoardgamesComponent } from './components/boardgames.component';
 import { BoardgameDetailsComponent } from './components/boardgame-details.component';
 import { CommentsComponent } from './components/comments.component';
 import { ApprouteModule } from './approute.module';
+import { BoardgameService } from './boardgame.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ApprouteModule } from './approute.module';
     MaterialModule,
     ApprouteModule
   ],
-  providers: [],
+  providers: [BoardgameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

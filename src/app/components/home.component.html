@@ -1,1 +1,29 @@
-<p>home works!</p>
+<h2>Search Boardgames</h2>
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput id="name" #name placeholder="Search by Name">
+  </mat-form-field>
+
+  <button type="button" color="primary" mat-raised-button
+          (click)="onSearchByName(name.value)" class="btn">
+    Search
+  </button>
+</div>
+
+<p></p>
+<p></p>
+<p></p>
+
+<div class="example-container">
+  <mat-form-field>
+    <input matInput id="category" #category placeholder="Search by Category">
+  </mat-form-field>
+
+  <button type="button" color="primary" mat-raised-button
+          (click)="onSearchByCategory(category.value)" class="btn">
+    Search
+  </button>
+</div>
+
+

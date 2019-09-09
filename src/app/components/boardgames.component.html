@@ -1,1 +1,9 @@
-<p>boardgames works!</p>
+<mat-toolbar>
+  <span>Searched List: {{ name }}</span>
+</mat-toolbar>
+<mat-action-list>
+  <button mat-list-item *ngFor="let r of boardgameList.boardgames"
+          (click)="selected(r.ID)">
+    {{ r.Name || r.primary}}
+  </button>
+</mat-action-list>
