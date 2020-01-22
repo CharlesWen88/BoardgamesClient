@@ -21,11 +21,15 @@ export interface BoardgameList {
   boardgames: BoardgameName[];
 }
 
-export interface Comment {
+export interface CommentDetails {
   _id: string;
   id: string;
   name: string;
   user: string;
   rating: string;
   comment: string;
+}
+
+export interface CommentList {
+  comments: CommentDetails[];
 }

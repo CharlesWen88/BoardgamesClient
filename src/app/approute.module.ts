@@ -9,7 +9,7 @@ const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'boardgames/name/:name', component: BoardgamesComponent },
   { path: 'boardgames/category/:category', component: BoardgamesComponent },
-  { path: 'details', component: BoardgameDetailsComponent },
+  { path: 'details/:id', component: BoardgameDetailsComponent },
   { path: 'comments', component: CommentsComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

@@ -1,1 +1,47 @@
-<p>boardgame-details works!</p>
+<div>
+  <mat-card class="example-card">
+    <img mat-card-image [src]="imageUrl" alt="Photo of Boardgame" class="center">
+    <form fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1vh">
+      <mat-form-field>
+        <input type="text" readonly matInput
+               name="name"
+               [value]="boardgame?.name"
+               placeholder="Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" readonly matInput
+               name="year"
+               [value]="boardgame?.year"
+               placeholder="Year">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" readonly matInput
+               name="rank"
+               [value]="boardgame?.rank"
+               placeholder="Rank">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" readonly matInput
+               name="average"
+               [value]="boardgame?.average"
+               placeholder="Average">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" readonly matInput
+               name="bayesAverage"
+               [value]="boardgame?.bayesAverage"
+               placeholder="Bayes Average">
+      </mat-form-field>
+    </form>
+  </mat-card>
+</div>
+
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let c of commentList.comments">
+      {{ c.comment }}
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+</div>
+

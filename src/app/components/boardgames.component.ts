@@ -27,6 +27,9 @@ export class BoardgamesComponent implements OnInit {
           console.log('Searching by Name');
           console.info('>> Boardgame list: ', this.boardgameList)
         })
+        .catch(error => {
+          console.info('error: ', error)
+        })
     }
     else
     {
@@ -37,8 +40,16 @@ export class BoardgamesComponent implements OnInit {
           console.log('Searching by Category');
           console.info('>> Boardgame list: ', this.boardgameList)
         })
+        .catch(error => {
+          console.info('error: ', error)
+        })
     }
     
+  }
+
+  selected(text) {
+    console.info('Selected boardgame:', text)
+    this.router.navigate(['/details', text]);
   }
 
 }
