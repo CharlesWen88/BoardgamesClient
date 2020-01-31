@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BoardgameService } from '../boardgame.service';
-import { Boardgame, CommentList } from '../model';
+import { Boardgame, CommentList, BoardgameDetails } from '../model';
 
 @Component({
   selector: 'app-boardgame-details',
@@ -12,6 +12,7 @@ export class BoardgameDetailsComponent implements OnInit {
 
   id = '';
   boardgame: Boardgame;
+  boardgameDetails: BoardgameDetails;
   commentList: CommentList = { comments: [] };
   imageUrl: string;
 
@@ -21,11 +22,21 @@ export class BoardgameDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.activateRoute.snapshot.params.id;
     console.info('>>id: ', id);
+
     this.boardgameSvc.boardgameDetails(id)
       .then(result => {
         console.info('details: ', result)
         this.boardgame = result;
         this.imageUrl = this.boardgame.thumbnail;
+      })
+      .catch(error => {
+        console.info('error: ', error)
+      })
+
+      this.boardgameSvc.boardgameAdditionalDetails(id)
+      .then(result => {
+        console.info('details: ', result)
+        this.boardgameDetails = result;
       })
       .catch(error => {
         console.info('error: ', error)

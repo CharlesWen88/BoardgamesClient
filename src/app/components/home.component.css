@@ -3,6 +3,8 @@
   flex-direction: column;
 }
 
-  .example-container > * {
-    width: 40%;
-  }
+.example-container > * {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

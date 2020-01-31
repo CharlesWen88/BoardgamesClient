@@ -11,6 +11,13 @@ export interface Boardgame {
   thumbnail: string;
 }
 
+export interface BoardgameDetails {
+  _id: string;
+  id: string;
+  minPlayers: string;
+  maxPlayers: string;
+}
+
 export interface BoardgameName {
   _id: string;
   id: string;

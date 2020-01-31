@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
 
-import { Boardgame, BoardgameName, BoardgameList, CommentList, CommentDetails } from './model';
+import { Boardgame, BoardgameDetails, BoardgameName, BoardgameList, CommentList, CommentDetails } from './model';
 
 @Injectable()
 export class BoardgameService {
@@ -48,6 +48,21 @@ export class BoardgameService {
             usersRated: result['Users rated'],
             url: result.URL,
             thumbnail: result.Thumbnail
+          }
+        })
+      )
+  }
+
+  boardgameAdditionalDetails(id: string): Promise<BoardgameDetails> {
+    return (
+      this.http.get<any>(`/api/boardgame/details/${id}`)
+        .toPromise()
+        .then(result => {
+          return <BoardgameDetails>{
+            _id: result._id,
+            id: result.id,
+            minPlayers: result.minplayers,
+            maxPlayers: result.maxplayers
           }
         })
       )
