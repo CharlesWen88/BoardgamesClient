@@ -1,118 +1,96 @@
 
-  <mat-card class="example-card">
-    <img mat-card-image [src]="imageUrl" height="150px" alt="Photo of Boardgame" class="center">
-    <form fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1px">
-    
-    <mat-card-title>Details</mat-card-title>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="name"
-               [value]="boardgame?.name"
-               placeholder="Name">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="year"
-               [value]="boardgame?.year"
-               placeholder="Year">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="rank"
-               [value]="boardgame?.rank"
-               placeholder="Rank">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="average"
-               [value]="boardgame?.average"
-               placeholder="Average">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="bayesAverage"
-               [value]="boardgame?.bayesAverage"
-               placeholder="Bayes Average">
-      </mat-form-field>
-<<<<<<< HEAD
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="minPlayers"
-               [value]="boardgameDetails?.minPlayers"
-               placeholder="Min Players">
-      </mat-form-field>
-      <mat-form-field>
-        <input type="text" readonly matInput
-               name="maxPlayers"
-               [value]="boardgameDetails?.maxPlayers"
-               placeholder="Max Players">
-      </mat-form-field>
-=======
-    
->>>>>>> origin/master
-    </form>
-  </mat-card>
-
-<<<<<<< HEAD
+<mat-card class="example-card">
+  <img mat-card-image [src]="imageUrl" height="150px" alt="Photo of Boardgame" class="center">
+  <form fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1px">
+  
+  <mat-card-title>Details</mat-card-title>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="name"
+              [value]="boardgame?.name"
+              placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="year"
+              [value]="boardgame?.year"
+              placeholder="Year">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="rank"
+              [value]="boardgame?.rank"
+              placeholder="Rank">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="average"
+              [value]="boardgame?.average"
+              placeholder="Average">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="bayesAverage"
+              [value]="boardgame?.bayesAverage"
+              placeholder="Bayes Average">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="minPlayers"
+              [value]="boardgameDetails?.minPlayers"
+              placeholder="Min Players">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" readonly matInput
+              name="maxPlayers"
+              [value]="boardgameDetails?.maxPlayers"
+              placeholder="Max Players">
+    </mat-form-field>
+  
+  </form>
+</mat-card>
+<p></p>
+<mat-card class="example-card">
+  <form action="/api/comments" ngNoForm method="post" fxLayoutGap="0px">  
+      <mat-card-title>Reviews</mat-card-title>
+      <mat-card-subtitle>View recent reviews and rate this boardgame! </mat-card-subtitle>
+      <div>
+        <mat-form-field style="width:120px !important">
+          <input matInput name="user" type="text" placeholder="Username" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field style="width:80px !important" >  
+          <input matInput type="number" name="rating" placeholder="Rating" min="1" max="10" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field style="width:400px !important">  
+          <input matInput name="comment" id="comment" type="text" placeholder="Comment" size=200 required>
+        </mat-form-field>
+      </div>
+      <input type="hidden" name="gameid" [value] ="boardgame?.id">
+      <input type="hidden" name="name" [value] ="boardgame?.name">  
+      <button mat-raised-button color="primary" type=“submit”> Post </button>
+  </form> 
+</mat-card> 
+<br>
 <div>
   <mat-list>
-    <mat-list-item *ngFor="let c of commentList.comments">
-      <div matLine>
-        <b>User: </b>{{ c.user }}
-      </div>
-      <div matLine>
-        <b>Rating: </b>{{ c.rating }}
-      </div>
-      <div matLine style="white-space: normal;">
-        <b>Comment: </b>{{ c.comment }}
-      </div>
-      <mat-divider></mat-divider>
-    </mat-list-item>
+      <mat-list-item *ngFor="let c of commentList.comments">
+        <div matLine>
+          <b>User: </b> {{c.user}}
+        </div>
+        <div matLine>
+          <b>Rating: </b> {{c.rating}}
+        </div>
+        <div matLine style="white-space: normal;">
+          <b>Comment: </b> {{ c.comment }}
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
   </mat-list>
 </div>
-=======
-  <p></p>
-  <mat-card>
-      <form action="/api/comments" ngNoForm method="post" fxLayoutGap="0px">  
-        
-          <mat-card-title>Reviews</mat-card-title>
-          <mat-card-subtitle>View recent reviews and rate this boardgame! </mat-card-subtitle>
-        
-          <mat-form-field style="width:120px !important">
-            <input matInput name="user" type="text" placeholder="Username" required>
-          </mat-form-field>
-          <mat-form-field style="width:80px !important" >  
-             <input matInput type="number" name="rating" placeholder="Rating" min="1" max="10" required>
-          </mat-form-field>
-          <mat-form-field style="width:400px !important">  
-             <input matInput name="comment" id="comment" type="text" placeholder="Comment" size=200 required>
-          </mat-form-field>
-        
-             <input type="hidden" name="gameid" [value] ="boardgame?.id">
-             <input type="hidden" name="name" [value] ="boardgame?.name">
-         
-             
-          <button mat-raised-button color="primary" type=“submit”> Post </button>
-        
->>>>>>> origin/master
-
-      </form> 
-    </mat-card>
-<br>
-          <mat-list>
-              <mat-list-item *ngFor="let c of commentList.comments">
-                <div matLine>
-                  <b>User: </b> {{c.user}}
-                </div>
-                <div matLine>
-                  <b>Rating: </b> {{c.rating}}
-                </div>
-                <div matLine style="white-space: normal;">
-                  <b>Comment: </b> {{ c.comment }}
-                </div>
-                <mat-divider></mat-divider>
-              </mat-list-item>
-          </mat-list> 
     
   
    
